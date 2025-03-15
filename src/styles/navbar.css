@@ -1,0 +1,163 @@
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 80px; 
+    padding: 0 112px;
+    background: white;
+    font-family: 'Inter', sans-serif;
+    text-wrap: nowrap;
+  }
+  
+.logo {
+    display: flex;
+    align-items: center;
+    font-size: 20px;
+    font-weight: bold;
+    cursor: pointer;
+}
+   
+.logo img {
+    height: 32px;
+    margin-right: 10px;
+}
+  
+.nav-links {
+    list-style: none;
+    display: flex;
+    gap: 32px;
+    font-size: 16px;
+    margin-left: auto; 
+    margin-right: 50px;
+
+}
+  
+.nav-links li a {
+    text-decoration: none;
+    color: black;
+    font-weight: 400;
+}
+  
+.nav-buttons {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: 'Inter', sans-serif;
+}
+  
+.consult-btn, .login-btn, .whatsapp-btn {
+    border: none;
+    padding: 10px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 14px;
+}
+  
+.consult-btn {
+    background-color: white;
+    border: 1px solid #ddd;
+    color: black;
+    font-family: 'Inter', sans-serif;
+}
+  
+.login-btn {
+    background-color: #4BAEEB;
+    color: white;
+    font-family: 'Inter', sans-serif;
+}
+  
+.whatsapp-btn {
+    background: white;
+    border: 1px solid #ddd;
+    padding: 8px;
+    border-radius: 5px;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.whatsapp-btn img {
+    width: 20px;
+    height: 20px;
+}
+
+@media (max-width: 1024px) {
+    .navbar {
+        flex-direction: column;
+        height: auto;
+        padding: 20px;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .nav-links {
+        flex-direction: column;
+        gap: 16px;
+        margin: 0;
+        padding: 0;
+        text-align: center;
+        text-wrap: nowrap;
+    }
+
+    .nav-buttons {
+        flex-direction: column;
+        width: 100%;
+        gap: 10px;
+    }
+
+    .consult-btn, .login-btn, .whatsapp-btn {
+        width: 100%;
+    }
+
+   
+}
+
+@media (max-width: 768px) {
+    .navbar {
+        padding: 20px;
+        gap: 15px;
+    }
+
+    .logo {
+        font-size: 18px;
+    }
+
+    .nav-links {
+        gap: 10px;
+        font-size: 18px;
+    }
+
+    .nav-buttons {
+        gap: 8px;
+        max-width: 300px;
+    }
+
+    .consult-btn, .login-btn, .whatsapp-btn {
+        font-size: 16px;
+        padding: 8px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px;
+    }
+
+    .logo {
+        font-size: 16px;
+    }
+
+    .nav-links {
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .consult-btn, .login-btn, .whatsapp-btn {
+        font-size: 12px;
+        padding: 6px 10px;
+    }
+}
