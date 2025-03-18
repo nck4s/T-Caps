@@ -7,7 +7,7 @@
 /* Основной стиль карточки */
 .category-card {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   background: white;
   border-radius: 16px;
   padding: 24px;
@@ -34,6 +34,24 @@
   flex-shrink: 0;
 }
 
+.category-header-wrapper {
+  display: flex;
+  align-items: flex-start;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.category-header-wrapper h3 {
+  font-size: 20px;
+  font-weight: 400;
+  white-space: nowrap;
+  line-height: 28px;
+  flex-grow: 1;
+  margin: 0;
+}
+
 .category-header {
   display: flex;
   align-items: center;
@@ -57,6 +75,7 @@
   display: flex;
   flex-direction: column;
   justify-content: flex-start;
+  align-items: flex-start;
   width: 100%;
   height: 100%;
   overflow: hidden;
@@ -66,7 +85,7 @@
 .category-info {
   display: flex;
   flex-direction: row;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   width: 100%;
 }
@@ -101,9 +120,32 @@
 
 /* Описание */
 .category-description {
+  display: flex;
+  flex-direction: column; 
+  align-items: flex-start;  
+  text-align: left;
   font-size: 16px;
   color: #535862;
-  margin-top: 12px;
+  margin-top: 10px;
   width: 85%;
   line-height: 24px;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  .category-card {
+    display: flex;
+    align-items: self-start;
+    text-align: left;
+    max-width: 100%;
+  }
+  .category-title {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  .category-header {
+    margin-bottom: 0px;
+  }
 }

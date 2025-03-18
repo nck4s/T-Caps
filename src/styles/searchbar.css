@@ -1,0 +1,146 @@
+/* Основной контейнер поисковой строки */
+.search-bar {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  gap: 16px; /* Пространство между полем ввода и кнопкой */
+  width: 100%;
+  max-width: 915px;
+  margin: auto;
+  padding: 64px;
+
+}
+
+/* Обертка для инпута */
+.input-wrapper {
+  position: relative; /* Позволяет input занимать всю доступную ширину */
+  max-width: 915px;
+}
+
+/* Стилизация поля ввода */
+.search-bar input {
+  width: 636px;
+  height: 70px;
+  border-radius: 24px;
+  padding: 20px;
+  background-color: rgba(242, 242, 242, 0.6);
+  border: none;
+  font-size: 20px;
+}
+
+.search-bar input::placeholder {
+  color: rgba(170, 181, 191, 0.7); /* Полупрозрачный цвет плейсхолдера */
+}
+
+/* Иконка звездочки */
+.star-icon {
+  position: absolute;
+  right: 15px;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 34px;
+  height: 34px;
+}
+
+/* Кнопка */
+.select-btn {
+  flex-shrink: 0;
+  width: 255px;
+  height: 70px;
+  border-radius: 16px;
+  background-color: #4BAEEB;
+  border: none;
+  font-size: 18px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+/* Эффект при наведении */
+.select-btn:hover {
+  background-color: #3b82c4;
+}
+
+/* Эффект нажатия */
+.select-btn:active {
+  background-color: #2a5f8c;
+}
+
+/* АДАПТАЦИЯ */
+
+/* 📱 Планшеты и небольшие экраны (до 1024px) */
+@media (max-width: 1024px) {
+  .search-bar {
+    flex-direction: column;
+    max-width: 100%;
+    gap: 12px;
+  }
+
+  .input-wrapper {
+    width: 100%;
+  }
+
+  .search-bar input {
+    width: 100%;
+    font-size: 18px;
+    padding: 16px;
+  }
+
+  .select-btn {
+    width: 100%;
+    max-width: 100%;
+    font-size: 18px;
+  }
+}
+
+/* 📱 Мобильные устройства (до 768px) */
+@media (max-width: 768px) {
+  .search-bar {
+    margin: 0 auto;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    padding: 0 auto;
+  }
+
+  .search-bar input {
+    height: 60px;
+    border-radius: 16px;
+    font-size: 16px;
+    width: 343px;
+    padding: 12px 16px;
+  }
+
+  .star-icon {
+    display: none;
+  }
+
+  .select-btn {
+    font-size: 16px;
+    width: 343px;
+    max-width: 100%;
+    height: auto;
+    border-radius: 16px;
+  }
+}
+
+/* 🔄 Дополнительные правки для мелких экранов (до 480px) */
+@media (max-width: 480px) {
+  .search-bar {
+    max-width: 100%;
+    padding: 0 10px;
+  }
+
+  .search-bar input {
+    font-size: 14px;
+    padding: 10px;
+    height: 45px;
+  }
+
+  .select-btn {
+    font-size: 14px;
+    height: 45px;
+  }
+}

@@ -1,0 +1,43 @@
+/* Основная секция */
+.cta {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+  max-width: 1440px;
+  margin: 0 auto;
+  padding: 96px;
+  align-content: center;
+}
+
+/* Заголовок */
+.cta-title {
+  font-size: 36px;
+  font-weight: 700;
+  max-width: 768px;
+  line-height: 44px;
+  letter-spacing: -2%;
+}
+
+
+@media (max-width: 768px) {
+  .cta {
+    display: flex;
+    flex-direction: column;
+    text-align: center;
+    justify-content: center;
+    width: 100%;
+    padding: 0;
+    margin-top: 64px;
+
+  }
+
+  .cta-title {
+    font-size: 30px;
+    line-height:38px;
+    width:75%;
+    margin-bottom: 24px;
+  }
+}
+

@@ -1,141 +1,53 @@
 .hero {
-  position: relative;
   display: flex;
-  align-items: center;
   justify-content: center;
-  padding: 76px 50px 0px 50px;
+  align-items: center;
+  padding: 76px 112px;
   max-width: 100%;
-  margin: 0 auto;
-  font-family: 'Inter', sans-serif;
-  gap: 20px;
+  position: relative;
 }
 
 .leftCapsule {
   position: absolute;
   left: 100px;
   top: 50%;
-  transform: translateY(-50%);
-  padding-right: 20px;
-  display: flex;
-  justify-content: flex-end;
-  flex-shrink: 1;
-  width: 600px;
+  transform: translateY(-65%);
+  width: 570px;
 }
 
 .leftCapsule img {
   width: 100%;
-  max-width: 560px;
 }
 
 .hero-content {
   display: flex;
-  flex-direction: column;
   align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  max-width: 768px;
   text-align: center;
-  max-width: 50%;
-  margin: 0 auto;
-
+  padding: 20px;
 }
 
-.hero h1 {
+.hero-content h1 {
   font-size: 60px;
-  font-weight: 600;
+  margin-bottom: 24px;
   line-height: 72px;
-  letter-spacing: -2px;
-  padding-bottom: 24px;
+  letter-spacing: -2%;
 }
 
-.blue-text {
+.hero-content h1 span {
   color: #4BAEEB;
 }
 
-.hero p {
-  margin-top: -5px;
+.hero-content p {
   font-size: 20px;
+  margin-bottom: 120px;
   line-height: 30px;
   color: #535862;
-  width: 80%;
 }
 
-/* Форма с заголовком и полем */
-.hero-form {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  margin-top: 30px;
-  gap: 10px;
-}
-
-.hero-form h1 {
-  font-size: 36px;
-  font-weight: 500;
-}
-
-.form-header {
-  font-size: 36px;
-  line-height: 44px;
-}
-
-/* Поле ввода и кнопка на одной строке */
-.form-fields {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
-
-/* Обертка для input */
-.input-wrapper {
-  position: relative;
-  display: flex;
-  align-items: center;
-  width: 100%;
-  max-width: 500px;
-  height: 65px;
-}
-
-.input-wrapper input {
-  width: 636px;
-  height: 70px;
-  margin-right: 5px;
-  font-size: 18px;
-  border: none;
-  border-radius: 18px;
-  background: rgba(0, 0, 0, 0.05);
-  outline: none;
-  font-family: 'Inter', sans-serif;
-  padding-left: 20px;
-  padding-right: 20px;
-}
-
-/* Звездочка */
-.star-icon {
-  position: absolute;
-  right: 20px;
-  width: 34px;
-  height: 34px;
-}
-
-/* Кнопка */
-.select-btn {
-  padding: 16px 20px;
-  border: none;
-  background-color: #4BAEEB;
-  color: white;
-  cursor: pointer;
-  border-radius: 16px;
-  font-size: 18px;
-  font-family: 'Inter', sans-serif;
-  height: 70px;
-  width: 255px;
-  font-weight: 400;
-  white-space: nowrap;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-}
-
+/* Летающие элементы */
 .hero-floating {
   position: absolute;
   width: 100%;
@@ -143,9 +55,9 @@
   top: 0;
   left: 0;
   pointer-events: none;
+  z-index: -1;
 }
 
-/* Фоновая сфера */
 .sphere {
   position: absolute;
   right: 10%;
@@ -153,7 +65,6 @@
   width: 500px;
 }
 
-/* Средняя капсула */
 .mcapsule {
   position: absolute;
   right: 10%;
@@ -161,7 +72,6 @@
   width: 178px;
 }
 
-/* Маленькая капсула */
 .scapsule {
   position: absolute;
   right: 18%;
@@ -169,7 +79,6 @@
   width: 160px;
 }
 
-/* Очень маленькая капсула */
 .xscapsule {
   position: absolute;
   right: 28%;
@@ -177,207 +86,91 @@
   width: 83px;
 }
 
+.hero-floating img {
+  transition: transform 0.2s ease-out;
+}
 
-@media (max-width: 1024px) {
-  .hero {
-    padding: 40px 60px;
+/* 🏆 Делаем анимацию еще плавнее */
+.floating-item {
+  will-change: transform;
+}
 
-  }
 
-
+@media (max-width: 1200px) {
   .leftCapsule {
-    margin-left: 0;
-    margin-right: 20px;
-    z-index: 1;
+    position: absolute;
+    width: 400px;
+    transform: translateX(-230px);
+    top: 20%;
+    margin-bottom: -40px;
+    z-index: -1; /* Отправляем капсулу на задний план */
   }
 
-  .leftCapsule img {
+  .hero-content p {
+    font-size: 18px;
+    margin-bottom: 120px;
+    line-height: 30px;
+    color: #535862;
     max-width: 400px;
   }
-
-  .hero-content {
-    transform: translateX(0);
-    z-index: 4;
-  }
-
-  .hero h1 {
-    font-size: 5vw;
-  }
-
-  .hero p {
-    font-size: 16px;
-  }
-
-  .input-wrapper input {
-    height: 55px;
-  }
-
-  .select-btn {
-    font-size: 16px;
-    height: 55px;
-  }
-
-
 }
 
-@media (max-width: 1500px) {
-  .leftCapsule {
-    display: none;
-  }
-}
-
-
-@media (min-width: 1200px) {
-  .hero-content {
-    transform: translateX(0);
-  }
-
-  .leftCapsule {
-    margin-left: 0;
-    margin-right: 20px;
-  }
-
-}
-
-@media (max-width: 1200px) {
-  .hero h1 {
-    font-size: 40px;
-    line-height: 40px;
-  }
-
-  .hero-content {
-    padding-top: 30px;
-  }
-
-  .hero p {
-    font-size: 21px;
-    line-height: 35px;
-    width: 100%;
-  }
-}
-
-@media (max-width: 1200px) {
-  .hero p {
-    font-size: 20px;
-    line-height: 35px;
-    width: 100%;
-    margin-top: 20px;
-  }
-}
-
-@media (max-width: 1200px) {
-  .hero-form h1 {
-    font-size: 30px;
-
-    line-height: 36px;
-  }
-}
-
-
-@media (max-width: 1024px) {
-  .hero-content {
-    max-width: 55%;
-    transform: translateX(0);
-    z-index: 4;
-  }
-
-  .form-fields {
-    flex-wrap: wrap;
-    gap: 10px;
-  }
-}
-
+/* 🖥 Адаптация под мобильные устройства */
 @media (max-width: 768px) {
   .hero {
     flex-direction: column;
     align-items: center;
     text-align: center;
-    padding: 4px;
-  }
-
-  .leftCapsule {
-    margin: 0;
-  }
-
-  .leftCapsule img {
-    max-width: 320px;
-    margin-bottom: -10px;
-  }
-
-  .hero-content {
-    max-width: 90%;
-  }
-
-  .hero h1 {
-    font-size: 30px;
-    line-height: 40px;
-  }
-
-  .hero p {
-    font-size: 16px;
     width: 100%;
-  }
-
-  .hero-form {
-    margin-top: 20px;
-    gap: 5px;
-  }
-
-  .hero-form h1 {
-    font-size: 25px;
-  }
-
-  @media (max-width: 768px) {
-    .leftCapsule {
-      display: none;
-    }
-  }
-
-  .input-wrapper {
-    height: 55px;
-    max-width: 400px;
-  }
-
-  .input-wrapper input {
-    height: 50px;
-  }
-
-  .hero-floating {
-    display: none;
-  }
-
-  .form-fields {
-    flex-direction: column;
-    width: 100%;
-  }
-
-  .select-btn {
-    width: 100%;
-    height: 50px;
-    font-size: 16px;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
     padding: 20px;
   }
 
-  .hero h1 {
-    font-size: 7vw;
+  .leftCapsule {
+    position: relative;
+    width: 300px;
+    transform: translateX(-90px);
+    margin-bottom: -40px;
+    margin-top:-20px;
   }
 
-  .hero p {
-    font-size: 12px;
+  .hero-content {
+    max-width: 100%;
   }
 
-  .input-wrapper input {
-    height: 45px;
+  .hero-content h1 {
+    font-size: 36px;
+    line-height: 44px;
+    margin-bottom: 20px;
   }
 
-  .star-icon {
-    width: 20px;
-    height: 20px;
-    right: 10px;
+  .hero-content p {
+    font-size: 18px;
+    line-height: 28px;
+    margin-bottom: 64px;
+  }
+
+  .sphere {
+    display: none;
+  }
+
+  .mcapsule {
+    position: absolute;
+    width: 111px;
+    right: 5%;
+    top: 70%;
+  }
+
+  .scapsule {
+    position: absolute;
+    width: 110px;
+    left: 15%;
+    top: 75%;
+  }
+
+  .xscapsule {
+    position: absolute;
+    width: 50px;
+    right: 75%;
+    bottom: 10%;
   }
 }

@@ -1,13 +1,24 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "../styles/hero.css";
+import SearchBar from "./SearchBar"; 
 import capsule from "../assets/capsule.png";
 import sphere from "../assets/sphere.png";
-import mcapsule from "../assets/mcapsule.png";
-import scapsule from "../assets/scapsule.png";
-import xscapsule from "../assets/xscapsule.png";
-import starIcon from "../assets/star.png"; 
+import mcapsule from "../assets/mcapsule.svg";
+import scapsule from "../assets/scapsule.svg";
+import xscapsule from "../assets/xscapsule.svg";
 
 const Hero = () => {
+  const [scrollY, setScrollY] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrollY(window.scrollY);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
     <section className="hero">
       {/* Левая капсула */}
@@ -18,33 +29,42 @@ const Hero = () => {
       {/* Центральный контент */}
       <div className="hero-content">
         <h1>
-          <span className="blue-text">Speed up</span> your <span className="blue-text">work</span> <br /> with AI Capsules!
+          <span className="blue-text">Ускорьте</span> свою <span className="blue-text">работу</span> <br /> с AI Капсулой!
         </h1>
         <p>
-        Выберите сферу и процесс, который хотите автоматизировать, и получите AI-Капсулу с готовым решением по ускорению выбранной задачи.
+          Выберите сферу и процесс, который хотите автоматизировать, и получите AI-Капсулу с готовым решением по ускорению выбранной задачи.
         </p>
 
-        {/* Форма ввода и кнопка */}
-        <div className="hero-form">
-          <h1 className="form-header">Что хотите улучшить?</h1>
-          <div className="form-fields">
-            <div className="input-wrapper">
-              <input type="text" placeholder="Ваша сфера деятельности" />
-              <img src={starIcon} alt="star" className="star-icon" />
-            </div>
-            <button className="select-btn">Подобрать AI капсулу</button>
-          </div>
-        </div>
-
+        {/* Подключаем новый компонент SearchBar */}
+        <SearchBar />
       </div>
 
-      {/* капсулы */}
+      {/* Летающие капсулы с параллакс-эффектом */}
       <div className="hero-floating">
-        <img src={sphere} alt="sphere" className="floating-item sphere" />
-        <img src={sphere} alt="sphere" className="floating-item sphere2" />
-        <img src={mcapsule} alt="mediumCapsule" className="floating-item mcapsule" />
-        <img src={scapsule} alt="smallCapsule" className="floating-item scapsule" />
-        <img src={xscapsule} alt="xsmallCapsule" className="floating-item xscapsule" />
+        <img 
+          src={sphere} 
+          alt="sphere" 
+          className="floating-item sphere" 
+          style={{ transform: `translateY(${scrollY * 0.1}px)` }} 
+        />
+        <img 
+          src={mcapsule} 
+          alt="mediumCapsule" 
+          className="floating-item mcapsule" 
+          style={{ transform: `translateY(${scrollY * 0.15}px)` }} 
+        />
+        <img 
+          src={scapsule} 
+          alt="smallCapsule" 
+          className="floating-item scapsule" 
+          style={{ transform: `translateY(${scrollY * 0.2}px)` }} 
+        />
+        <img 
+          src={xscapsule} 
+          alt="xsmallCapsule" 
+          className="floating-item xscapsule" 
+          style={{ transform: `translateY(${scrollY * 0.25}px)` }} 
+        />
       </div>
     </section>
   );

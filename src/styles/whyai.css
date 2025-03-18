@@ -1,0 +1,309 @@
+/* Основной контейнер секции */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Inter', sans-serif;
+}
+
+.why-ai {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 0 auto;
+  background-color: white;
+  padding: 80px 0;
+  width: 100%;
+}
+
+/* Заголовок секции */
+.why-ai-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 10px;
+  line-height: 44px;
+}
+
+/* Подзаголовок */
+.why-ai-subtitle {
+  font-size: 20px;
+  color: #535862;
+  text-align: center;
+  max-width: 750px;
+  margin-bottom: 64px;
+}
+
+/* Контейнер карточек */
+.why-ai-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+  width: 100%; 
+}
+
+/* Карточка */
+.why-ai-card {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: rgba(235, 245, 255, 0.4);
+  border-radius: 48px;
+  width: 100%;
+  max-width: 87%;
+  height: auto; /* Теперь карточка подстраивается под контент */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: 0.3s;
+  padding: 48px;
+}
+
+.why-ai-card:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Текстовая часть */
+.why-ai-text {
+  flex: 1;
+  text-align: left;
+  padding-right: 20px; /* Немного уменьшаем отступ текста от изображения */
+}
+
+/* Заголовок карточки */
+.why-ai-text h3 {
+  font-size: 24px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  line-height: 32px;
+  color: #000;
+}
+
+/* Теги */
+.why-ai-tags {
+  display: flex;
+  gap: 8px; /* Добавлен gap вместо большого margin-bottom */
+  margin-bottom: 48px;
+}
+
+.why-ai-tag {
+  background: #e6f4ff;
+  color: #4BAEEB;
+  padding: 8px 15px;
+  border-radius: 21px;
+  font-size: 16px;
+  font-weight: 400;
+}
+
+/* Список преимуществ */
+.why-ai-benefits {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  max-width: 49%;
+}
+
+.why-ai-benefits li {
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  color: #535862;
+  margin-bottom: 24px; /* Уменьшен отступ между пунктами */
+  line-height: 24px;
+}
+
+/* Иконки в списке */
+.why-ai-benefits li img {
+  width: 46px;
+  height: 46px;
+  margin-right: 12px;
+}
+
+/* Изображение */
+.why-ai-image {
+  display: flex;
+  align-items: center;
+  justify-content: left;
+  margin-left: -70px; /* Двигаем капсулы левее */
+  padding: 0;
+}
+
+.why-ai-image img {
+  width: 460px; /* Увеличен размер изображения */
+  height: auto;
+  flex-shrink: 0;
+}
+
+/* Кнопка */
+.why-ai-button {
+  background: #4BAEEB;
+  color: white;
+  border: none;
+  padding: 21px 28px;
+  border-radius: 16px;
+  font-size: 18px;
+  margin-top: 64px;
+  cursor: pointer;
+  transition: 0.3s;
+  font-weight: 400;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px; /* Увеличиваем отступ между текстом и иконкой */
+  width: 255px;
+  max-height: 70px;
+}
+
+/* Иконка звездочек */
+.button-icon {
+  width: 26px; /* Устанавливаем размер иконки */
+  height: auto;
+}
+
+.why-ai-button:hover {
+  background: #578cc5;
+}
+
+/* 🖥 Адаптивность */
+@media (max-width: 1024px) {
+  .why-ai-card {
+    flex-direction: column;
+    text-align: center;
+    height: auto;
+    padding: 40px;
+  }
+
+  .why-ai-text {
+    padding-right: 0;
+    text-align: center;
+  }
+
+  .why-ai-benefits li {
+    justify-content: center;
+  }
+
+  .why-ai-image {
+    margin-top: 20px;
+  }
+
+  .why-ai-image img {
+    width: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .why-ai {
+    padding: 20px;
+  }
+
+  .why-ai-title {
+    font-size: 30px;
+    margin-bottom: 16px;
+  }
+
+  .why-ai-subtitle {
+    font-size: 18px;
+    margin-bottom: 48px;
+  }
+
+  .why-ai-card {
+    flex-direction: column;
+    align-items: flex-start;
+    text-align: left;
+    max-width: 100%;
+    padding: 24px;
+    height: auto;
+  }
+
+  .why-ai-text {
+    padding-right: 0;
+    text-align: left;
+    max-width: 100%;
+  }
+
+
+  .why-ai-text h3 {
+    font-size: 20px;
+  }
+
+  .why-ai-tags {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    font-size: 14px;
+    align-items: left;
+    margin-bottom: 24px;
+    
+  }
+
+  .why-ai-tag {
+    text-align: center;
+    justify-content: center;
+    padding: 6px 12px;
+    font-size: 14px;
+    line-height: 20px;
+    width: fit-content;
+  }
+
+  .why-ai-benefits {
+    max-width: 100%;
+  }
+
+  .why-ai-benefits li {
+    font-size: 14px;
+  }
+  .why-ai-image {
+    display: flex;
+    justify-content: center;
+    order: -1; /* Двигаем изображение вверх */
+    margin-bottom: 16px; 
+    margin: auto 0;
+  }
+
+  .why-ai-image img {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+  }
+
+
+  .why-ai-button {
+    background: white;
+    color: #4BAEEB;
+    border: none;
+    border-radius: 16px;
+    font-size: 16px;
+    margin-top: 32px;
+    cursor: pointer;
+    font-weight: 400;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px; /* Увеличиваем отступ между текстом и иконкой */
+    border: 2px solid #4BAEEB;
+    width: 100%;
+    max-width: 85%;
+    height: 50px;
+  }
+  
+  /* Иконка звездочек */
+  .button-icon {
+    content: url("../assets/mobile_stars.svg"); /* Подменяем изображение звездочек */
+    width: 24px;
+    height: auto;
+    color: #4BAEEB;
+  }
+
+  /* Подмена изображений в мобильной версии */
+  .why-ai-card:nth-child(1) .why-ai-image img {
+    content: url('../assets/mobile_capsule1.png'); /* Заменяем картинку для первой карточки */
+  }
+
+  .why-ai-card:nth-child(2) .why-ai-image img {
+    content: url('../assets/mobile_capsule2.png'); /* Заменяем картинку для второй карточки */
+  }
+
+  .why-ai-card:nth-child(3) .why-ai-image img {
+    content: url('../assets/mobile_capsule3.png'); /* Заменяем картинку для третьей карточки */
+  }
+
+}

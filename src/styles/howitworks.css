@@ -1,0 +1,266 @@
+.how-it-works {
+  padding: 80px 112px;
+  max-width: 100%;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Заголовок */
+.how-it-works-header {
+  text-align: left;
+  max-width: 430px;
+  margin-bottom: 40px;
+}
+
+.how-it-works-step {
+  color: #4BAEEB;
+  font-weight: 600;
+  font-size: 16px;
+  margin-bottom: 10px;
+
+}
+
+.how-it-works-title {
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 20px;
+  line-height: 44px;
+  letter-spacing: -2%;
+}
+
+.how-it-works-description {
+  font-size: 20px;
+  color: #535862;
+  line-height: 30px;
+}
+
+/* Подсветка важных фраз */
+.highlight {
+  color: #4BAEEB;
+  font-weight: 600;
+}
+
+/* Карточки */
+.how-it-works-steps {
+  display: flex;
+  flex-direction: column;
+  max-width: 800px;
+  gap: 24px;
+}
+
+
+.how-it-works-header .how-it-works-step {
+  background: transparent;
+  color: #4BAEEB;
+  font-weight: 600;
+  font-size: 16px;
+  padding: auto;
+}
+
+.how-it-works-steps .how-it-works-step {
+  display: flex;
+  align-items: flex-start;
+  background: rgba(235, 245, 255, 0.4);
+  border-radius: 24px;
+  padding: 30px;
+  transition: 0.3s ease-in-out;
+  max-height: 250px;
+}
+
+.how-it-works-steps .how-it-works-step:hover {
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+}
+
+/* Текстовая часть */
+.how-it-works-text {
+  text-align: left;
+}
+
+.how-it-works-text h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 8px;
+  line-height: 30px;
+}
+
+.how-it-works-text p {
+  font-size: 16px;
+  color: #535862;
+  max-width: 80%;
+  line-height: 24px;
+  font-weight: 400;
+}
+
+/* Изображение */
+.how-it-works-image {
+  flex-shrink: 0;
+  width: 190px;
+
+}
+
+.how-it-works-image img {
+  max-width: 100%;
+  height: auto;
+}
+
+
+.mobile-only {
+  display: none;
+}
+
+
+
+
+@media (max-width: 768px) {
+  .how-it-works {
+    max-width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  /* Центрируем заголовок */
+  .how-it-works-header {
+    max-width: 100%;
+    text-align: center;
+  }
+
+  .how-it-works-title {
+    font-size: 28px;
+    line-height: 36px;
+  }
+
+  .how-it-works-description {
+    font-size: 18px;
+    line-height: 28px;
+    text-align: center;
+  }
+
+
+  /* Выравниваем карточки по центру */
+  .how-it-works-steps {
+    display: none;
+  }
+
+  .mobile-only {
+    display: block;
+    width: 100%;
+    max-width: 400px;
+  }
+
+  /* Делаем изображение первым элементом внутри карточки */
+  .how-it-works-carousel .how-it-works-step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background-color: rgba(173, 185, 195, 0.2);
+    border-radius: 24px;
+    width: 400px;
+    height: 580px;
+    padding: 24px;
+    box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
+  }
+
+  .how-it-works-carousel .how-it-works-text {
+    text-align: center;
+    max-width: 380px;
+    /* Даем тексту больше пространства */
+  }
+
+  .how-it-works-carousel .how-it-works-text {
+    text-align: center;
+    max-width: 320px;
+  }
+
+  .how-it-works-carousel .slick-slide {
+    padding: 10px;
+    align-items: center;
+  }
+
+  /* Стили для точек под слайдером */
+  .slick-dots li button:before {
+    color: #4BAEEB;
+  }
+
+  /* Увеличиваем размер изображения */
+  .how-it-works-image {
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    order: -1;
+    margin-bottom: 16px;
+    justify-content: flex-end; /* Оставляем изображение смещенным */
+    padding-right: 20px; /* Чуть больше пространства справа */
+  }
+
+  .how-it-works-image img {
+    max-height: auto;
+    object-fit: contain;
+    margin: 0 auto;
+    min-width: 270px;
+  }
+
+
+  /* Убираем ограничения ширины у текста */
+  .how-it-works-text {
+    width: 100%;
+    max-width: 320px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    padding: 20px;
+  }
+
+
+  .how-it-works-text h3 {
+    font-size: 20px;
+    font-weight: 600;
+    line-height: 30px;
+    margin-bottom: 8px;
+    color: black;
+  }
+
+  .how-it-works-text p {
+    font-size: 14px;
+    color: #535862;
+    line-height: 20px;
+    font-weight: 400;
+    text-align: center;
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 480px) {
+  .how-it-works {
+    padding: 30px 15px;
+  }
+
+  .how-it-works-title {
+    font-size: 24px;
+    line-height: 32px;
+  }
+
+  .how-it-works-description {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .how-it-works-steps .how-it-works-step {
+    padding: 15px;
+    border-radius: 16px;
+  }
+
+  .how-it-works-image {
+    width: 100px;
+  }
+}

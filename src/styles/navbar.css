@@ -1,3 +1,4 @@
+/* --- ОБЩИЕ СТИЛИ --- */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -6,8 +7,8 @@
     padding: 0 112px;
     background: white;
     font-family: 'Inter', sans-serif;
-    text-wrap: nowrap;
-  }
+    max-width: 100%;
+}
   
 .logo {
     display: flex;
@@ -29,7 +30,6 @@
     font-size: 16px;
     margin-left: auto; 
     margin-right: 50px;
-
 }
   
 .nav-links li a {
@@ -42,12 +42,11 @@
     display: flex;
     align-items: center;
     gap: 12px;
-    font-family: 'Inter', sans-serif;
 }
   
 .consult-btn, .login-btn, .whatsapp-btn {
     border: none;
-    padding: 10px 16px;
+    padding: 12px 16px;
     cursor: pointer;
     border-radius: 8px;
     display: flex;
@@ -60,24 +59,19 @@
     background-color: white;
     border: 1px solid #ddd;
     color: black;
-    font-family: 'Inter', sans-serif;
 }
   
 .login-btn {
     background-color: #4BAEEB;
     color: white;
-    font-family: 'Inter', sans-serif;
 }
   
 .whatsapp-btn {
     background: white;
     border: 1px solid #ddd;
-    padding: 8px;
-    border-radius: 5px;
-    cursor: pointer;
     display: flex;
     align-items: center;
-    justify-content: center;
+    gap: 8px;
 }
 
 .whatsapp-btn img {
@@ -85,79 +79,136 @@
     height: 20px;
 }
 
+/* --- БУРГЕР-МЕНЮ --- */
+.burger-menu {
+    display: none;
+}
+
+/* --- МОБИЛЬНАЯ ВЕРСИЯ --- */
 @media (max-width: 1024px) {
+
     .navbar {
-        flex-direction: column;
-        height: auto;
-        padding: 20px;
+        display: flex;
+        justify-content: space-between;
         align-items: center;
-        gap: 20px;
-    }
-
-    .nav-links {
-        flex-direction: column;
-        gap: 16px;
-        margin: 0;
-        padding: 0;
-        text-align: center;
-        text-wrap: nowrap;
-    }
-
-    .nav-buttons {
-        flex-direction: column;
-        width: 100%;
-        gap: 10px;
-    }
-
-    .consult-btn, .login-btn, .whatsapp-btn {
-        width: 100%;
-    }
-
-   
-}
-
-@media (max-width: 768px) {
-    .navbar {
-        padding: 20px;
-        gap: 15px;
+        padding: 0 24px; /* Уменьшили боковые отступы */
     }
 
     .logo {
-        font-size: 18px;
+        display: flex;
+        align-items: center;
+        gap: 12px; /* Увеличили расстояние между иконкой и текстом */
     }
 
-    .nav-links {
-        gap: 10px;
-        font-size: 18px;
-    }
-
+    .nav-links,
     .nav-buttons {
-        gap: 8px;
-        max-width: 300px;
+        display: none;
     }
 
-    .consult-btn, .login-btn, .whatsapp-btn {
-        font-size: 16px;
-        padding: 8px 12px;
+    .burger-menu {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: none;
+        border: none;
+        cursor: pointer;
+        margin-left: auto; /* Отодвигаем бургер вправо */
     }
+
+    /* Мобильное меню */
+    .mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background: white;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start; /* Выровнять контент по левому краю */
+        justify-content: flex-start;
+        text-align: left;
+        gap: 24px;
+        z-index: 9999;
+    }
+    
+
+    .mobile-logo {
+    display: flex;
+    justify-content: flex-start; /* Раздвигаем логотип и крестик */
+    align-items: center;
+    gap: 9px;
+    width: 100%;
+    padding: 20px 24px; /* Отступ сверху и по бокам */
 }
 
-@media (max-width: 480px) {
-    .navbar {
-        padding: 10px;
+.mobile-logo span {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.mobile-logo img {
+    height: 32px;
+}
+
+.mobile-menu ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* Выровнять все пункты влево */
+    padding-left: 24px; /* Добавляем отступ слева */
+    gap:24px;
+}
+
+    .mobile-menu ul li {
+        margin-bottom: 16px;
+        
     }
 
-    .logo {
-        font-size: 16px;
+    .mobile-menu ul li a {
+        font-size: 20px;
+        color:#535862;
+        text-decoration: none;
+        font-weight: 600;
+        padding: 24px 0;
+
     }
 
-    .nav-links {
-        font-size: 13px;
-        gap: 8px;
+    /* Кнопки в мобильном меню */
+    .mobile-buttons {
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        width: 100%;
+        padding: 24px;
+    }
+    
+    .mobile-buttons .whatsapp-btn,
+    .mobile-buttons .consult-btn,
+    .mobile-buttons .login-btn {
+        text-align: left; /* Текст в кнопках выравниваем влево */
+        padding: 14px;
+        font-size: 14px;
+        font-weight: 600;
+        width: 100%;
+        line-height: 20px;
     }
 
-    .consult-btn, .login-btn, .whatsapp-btn {
-        font-size: 12px;
-        padding: 6px 10px;
+    /* Кнопка закрытия */
+    .close-menu {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        background: none;
+        border: none;
+        cursor: pointer;
     }
+
+    .burger-menu img,
+.close-menu img {
+    width: 28px; /* Делаем одинаковый размер */
+}
 }
