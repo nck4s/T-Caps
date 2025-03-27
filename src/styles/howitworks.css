@@ -117,10 +117,13 @@
 
 @media (max-width: 768px) {
   .how-it-works {
+    padding: 20px;
     max-width: 100%;
+    width: 100%;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
   }
 
   /* Центрируем заголовок */
@@ -147,12 +150,15 @@
   }
 
   .mobile-only {
-    display: block;
-    width: 100%;
-    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    width: 90%;
+    max-width: 100%;
+    max-height: 100%;
+    height: 100%;
   }
 
-  /* Делаем изображение первым элементом внутри карточки */
+  /* изображение первым элементом внутри карточки */
   .how-it-works-carousel .how-it-works-step {
     display: flex;
     flex-direction: column;
@@ -161,26 +167,24 @@
     text-align: center;
     background-color: rgba(173, 185, 195, 0.2);
     border-radius: 24px;
-    width: 400px;
-    height: 580px;
-    padding: 24px;
+    max-width: 100%;
+    width: 100%;
+    max-height: 700px;
+    height: 100%;
+    padding: 20px;
     box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.05);
   }
 
   .how-it-works-carousel .how-it-works-text {
     text-align: center;
-    max-width: 380px;
-    /* Даем тексту больше пространства */
-  }
-
-  .how-it-works-carousel .how-it-works-text {
-    text-align: center;
-    max-width: 320px;
+    max-width: 100%;
+    justify-content: center;
   }
 
   .how-it-works-carousel .slick-slide {
     padding: 10px;
     align-items: center;
+    justify-content: center;
   }
 
   /* Стили для точек под слайдером */
@@ -188,7 +192,6 @@
     color: #4BAEEB;
   }
 
-  /* Увеличиваем размер изображения */
   .how-it-works-image {
     justify-content: center;
     align-items: center;
@@ -207,7 +210,6 @@
   }
 
 
-  /* Убираем ограничения ширины у текста */
   .how-it-works-text {
     width: 100%;
     max-width: 320px;

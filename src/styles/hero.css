@@ -94,7 +94,15 @@
 .floating-item {
   will-change: transform;
 }
-
+@media (max-width: 1500px) {
+  .leftCapsule {
+    position: absolute;
+    width: 500px;
+    transform: translateX(-220px);
+    top: 20%;
+    margin-bottom: -40px;
+    z-index: -1; /* Отправляем капсулу на задний план */
+  }
 
 @media (max-width: 1200px) {
   .leftCapsule {
