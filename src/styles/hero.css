@@ -90,7 +90,7 @@
   transition: transform 0.2s ease-out;
 }
 
-/* 🏆 Делаем анимацию еще плавнее */
+/*  Делаем анимацию плавнее */
 .floating-item {
   will-change: transform;
 }
@@ -101,8 +101,9 @@
     transform: translateX(-220px);
     top: 20%;
     margin-bottom: -40px;
-    z-index: -1; /* Отправляем капсулу на задний план */
+    z-index: -1; 
   }
+}
 
 @media (max-width: 1200px) {
   .leftCapsule {
@@ -111,7 +112,7 @@
     transform: translateX(-230px);
     top: 20%;
     margin-bottom: -40px;
-    z-index: -1; /* Отправляем капсулу на задний план */
+    z-index: -1; 
   }
 
   .hero-content p {
